@@ -1,0 +1,14 @@
+/* 
+    Created on : Feb 14, 2022, 3:45:51 PM
+    Author     : jose
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Maven Pro', sans-serif;
+}
+
