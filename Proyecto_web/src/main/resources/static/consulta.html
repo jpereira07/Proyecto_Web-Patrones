@@ -2,25 +2,27 @@
 
 <html>
     <head>
-        <title>Consultas</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Consulta Reservas</title>
+        <link rel="stylesheet" href="css/consulta.css">
     </head>
     <body>
-        <div>
+        <div class="content">
+            <h1>Consulta Reservaciones</h1>
             <form method="post">
                 <div class="txt_field">
                     <input type="text" required>
-                    <label>Codigo</label>
+                    <label>Numero de Reserva</label>
                 </div>
-                <input type="submit" value="Buscar">
+                <div class="txt_field">
+                    <input type="password" required>
+                    <label>Apellido</label>
+                </div>
+                <input type="submit" value="Verificar">
                 <div class="signup link">
-                    Not a member? <a href="signup.html"> Sign Up </a>
+                    Desea eliminar esta reserva? <a href="cancelar.html"> Ir a Cancelar </a>
                 </div>
+                <a href="index.html"> Home </a>
             </form>
-            <a href="cancelar.html"> Editar Reserva </a>
-            <br>
-            <a href="index.html"> Back </a>
         </div>
     </body>
 </html>
