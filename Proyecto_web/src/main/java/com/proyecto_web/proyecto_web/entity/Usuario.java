@@ -24,15 +24,10 @@ public class Usuario implements Serializable {
     private String apellido;
     private String telefono;
     private String email;
-
-    private String password;
-    private int active;
-    private String roles = "";
-    private String permissions = "";
     
     @ManyToOne
-    @JoinColumn (name="reservas_id")
-    private Reserva reservas;
+    @JoinColumn (name="idreservas")
+    private Reserva reserva;
 
     public int getIdusuarios() {
         return idusuarios;
@@ -74,56 +69,11 @@ public class Usuario implements Serializable {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public int getActive() {
-        return active;
-    }
-
-    public void setActive(int active) {
-        this.active = active;
-    }
-
-    public String getRoles() {
-        return roles;
-    }
-
-    public void setRoles(String roles) {
-        this.roles = roles;
-    }
-
-    public String getPermissions() {
-        return permissions;
-    }
-
-    public void setPermissions(String permissions) {
-        this.permissions = permissions;
-    }
-
     public Reserva getReservas() {
-        return reservas;
+        return reserva;
     }
 
-    public void setReservas(Reserva reservas) {
-        this.reservas = reservas;
-    }
-        public List<String> getRoleList() {
-        if (this.roles.length() > 0) {
-            return Arrays.asList(this.roles.split(","));
-        }
-        return new ArrayList<>();
-    }
-
-    public List<String> getPermissionList() {
-        if (this.permissions.length() > 0) {
-            return Arrays.asList(this.permissions.split(","));
-        }
-        return new ArrayList<>();
+    public void setReservas(Reserva reserva) {
+        this.reserva = reserva;
     }
 }

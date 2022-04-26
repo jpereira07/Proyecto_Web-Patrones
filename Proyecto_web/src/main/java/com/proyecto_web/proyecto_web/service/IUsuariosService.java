@@ -6,7 +6,7 @@ public interface IUsuariosService {
 
     public List<Usuario> getAllUser();
 
-    public void savePerson(Usuario usuario);
+    public void saveUser(Usuario usuario);
 
     public void delete(long id);
 

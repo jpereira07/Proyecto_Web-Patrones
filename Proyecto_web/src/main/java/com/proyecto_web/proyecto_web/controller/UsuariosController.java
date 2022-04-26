@@ -1,7 +1,5 @@
 package com.proyecto_web.proyecto_web.controller;
-import com.proyecto_web.proyecto_web.entity.Reservas;
-import com.proyecto_web.proyecto_web.entity.Usuarios;
-import com.proyecto_web.proyecto_web.service.IReservasService;
+import com.proyecto_web.proyecto_web.entity.Usuario;
 import com.proyecto_web.proyecto_web.service.IUsuariosService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +19,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class UsuariosController {
     
     @Autowired
-    private IReservasService reservasService;
-    @Autowired
     private IUsuariosService usuariosService;
     
     @GetMapping("/usuario")
@@ -34,28 +30,18 @@ public class UsuariosController {
     }
     @GetMapping("/usuarioNuevos")
     public String crearUsuario(Model model){
-        List<Reservas> listaReservas = reservasService.listReserves();
-        model.addAttribute("usuarios", new Usuarios());
-        model.addAttribute("reservas", listaReservas);
+        model.addAttribute("usuarios", new Usuario());
         return "modificarUsuario";
     }
     @PostMapping("/save")
-    public String guardarUser(@ModelAttribute Usuarios Usuarios){
-        usuariosService.saveUser(usuarios);
+    public String guardarUser(@ModelAttribute Usuario usuario){
+        usuariosService.saveUser(usuario);
         return "redirect:/usuarios";
     }
-    @GetMapping("/delete/{id}")
-    public String eliminarUser(@PathVariable("id") Long idUsuarios){
+    @GetMapping("/delete/{idusuarios}")
+    public String eliminarUser(@PathVariable("idusuarios") Long idUsuarios){
         usuariosService.delete(idUsuarios);
         return "redirect:/usuarios";
-    }
-    @GetMapping("/editUsuario/{id}")
-    public String editUser(@PathVariable{"id"} Long idUsuarios, Model model){
-        Usuarios usuarios = usuariosService.getUsuariosById(idUsuarios);
-        List<Reservas> listaReservas = reservasService.listReserves();
-        model.addAttribute("usuario", usuarios);
-        model.addAttribute("reservas", listaReservas);
-        return "modificarUsuario";
     }
 }
 

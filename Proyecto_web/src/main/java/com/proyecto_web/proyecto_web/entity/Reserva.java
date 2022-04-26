@@ -15,6 +15,8 @@ public class Reserva implements Serializable {
 
     private int idreservas;
     private String apellido;
+    private String datein;
+    private String dateout;
 
     public int getIdreservas() {
         return idreservas;
@@ -31,5 +33,22 @@ public class Reserva implements Serializable {
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
+
+    public String getDatein() {
+        return datein;
+    }
+
+    public void setDatein(String datein) {
+        this.datein = datein;
+    }
+
+    public String getDateout() {
+        return dateout;
+    }
+
+    public void setDateout(String dateout) {
+        this.dateout = dateout;
+    }
+    
     
 }

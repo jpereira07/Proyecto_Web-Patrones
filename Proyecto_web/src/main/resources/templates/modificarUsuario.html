@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:"http://wwww.w3.org/1999/xhtml">
+    <head th:replace="plantilla/template::head"></head>
+    <body>
+        <header th:replace="plantilla/template::header"></header>
+        <h1>Datos de Cliente</h1>
+        <a th:href="@{/usuario}">Regresar</a>
+        <br>
+        <div>
+            <form th:object="${usuario}"
+                  th:action="@{/save}"
+                  method="POST"
+                 >
+                <input type="hidden" th:field="*{id}">
+                <div>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" th:field="*{nombre}" name="nombre" ></input>
+                </div>
+            
+                <div>
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" th:field="*{apellido}" name="apellido" ></input>
+                </div>
+            
+                <div>
+                    <label for="email">Correo:</label>
+                    <input type="text" th:field="*{email}" name="email" ></input>
+                </div>
+            
+                <div>
+                    <label for="nombre">Telefono:</label>
+                    <input type="text" th:field="*{telefono}" name="telefono"></input>
+                </div>
+            
+                <button type="submit" value="Guardar">Submit</button>
+            </form>
+        </div>
+        <footer th:replace="plantilla/template::footer"></footer>
+    </body>
+</html>
+

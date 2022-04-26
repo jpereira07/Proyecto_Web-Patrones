@@ -16,7 +16,7 @@ public class UsuariosService implements IUsuariosService{
     }
 
     @Override
-    public void savePerson(Usuario usuario) {
+    public void saveUser(Usuario usuario) {
         usuarioRepository.save(usuario);
     }
 
